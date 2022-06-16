@@ -13,16 +13,55 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/home.css" />
-    <title>Web MVC UI</title>
+    <title>Plant Parent Simulator</title>
 </head>
 
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web MVC UI</h1>
+        <h1>Plant Parent Simulator</h1>
     </header>
 
-    <main></main>
+    <main>
+
+        <section id="parent-section">
+            <div class="notification-container">
+                Plants Watered:
+                    <span class="notification watered-count">0</span>
+                    <span class="notification message-center">...</span>
+            </div>
+            <div>
+                <p>
+                    Spills Until Refill:
+                    <span class="spill-count">10</span>
+                </p>
+                <img class="parent-image" src="./assets/parent.png"> 
+            </div>
+        </section>
+
+        <section id="plant-section">
+            <div>
+                <form>
+                    <input name="plant-name">
+                    <button>Add Plant</button>
+                </form>
+                <div class="plant-container">
+                    <div class="plant">
+                        <span>lily</span>
+                        <span class="plant-display"></span>
+                        <span class="plant-drinks">3</span>
+                    </div>
+
+                    <div class="plant">
+                        <span>petal</span>
+                        <span class="plant-display"></span>
+                        <span class="plant-drinks">5</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
     <footer>&copy;2022 Aspiring Software Developer</footer>
 

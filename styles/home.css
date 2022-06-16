@@ -1,1 +1,51 @@
 /* CSS for home page (index.html) */
+
+main {
+    padding: 0 30ps 60px 30px;
+    background-color:rgb(147, 168, 106);
+
+    display: grid;
+    grid-template-rows: 350px 1fr;
+    grid-template-areas: 
+        'parent-section'
+        'plant-section'
+    ;
+}
+
+@media (min-width: 600px) {
+    main {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+            'parent-section'  'plant-section'
+        ;
+        grid-gap: 0 40px;
+    }
+}
+
+#parent-section {
+    grid-area: 'parent-section';
+}
+
+#plant-section {
+    grid-area: 'plant-section';
+}
+
+.notification-container {
+    background-color: azure;
+    display: gird;
+    grid-template-areas: 
+        'watered-count'
+        'message-center'
+    ;
+    gap: 10px;
+    justify-items: center;
+
+}
+
+.watered-count {
+    grid-area: 'watered-count';
+}
+
+.message-center {
+    grid-area: 'message-center';
+}
