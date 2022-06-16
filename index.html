@@ -26,16 +26,26 @@
 
         <section id="parent-section">
             <div class="notification-container">
-                Plants Watered:
+
+                <p class="notification watered"> Plants Watered:
+
                     <span class="notification watered-count">0</span>
+
+                </p>
+
                     <span class="notification message-center">...</span>
+
             </div>
-            <div>
-                <p>
-                    Spills Until Refill:
+            <div id="parent-container">
+
+                <p class="spill-count">
+                    Spills Until Refill
                     <span class="spill-count">10</span>
                 </p>
-                <img class="parent-image" src="./assets/parent.png"> 
+
+                    <img class="parent-image" src="./assets/parent.png"> 
+                
+                
             </div>
         </section>
 
@@ -45,17 +55,19 @@
                     <input name="plant-name">
                     <button>Add Plant</button>
                 </form>
-                <div class="plant-container">
+                <div class="plants">
                     <div class="plant">
                         <span>lily</span>
-                        <span class="plant-display"></span>
                         <span class="plant-drinks">3</span>
+                        <span class="plant-display">...</span>
+                        
                     </div>
 
                     <div class="plant">
                         <span>petal</span>
-                        <span class="plant-display"></span>
                         <span class="plant-drinks">5</span>
+                        <span class="plant-display">...</span>
+                        
                     </div>
                 </div>
             </div>
