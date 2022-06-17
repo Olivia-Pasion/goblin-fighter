@@ -11,9 +11,10 @@ export function initialize() {
     state.message = '';
     state.spills = 10;
     state.hydrated = [];
+    state.drinks = [1, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5];
     state.plants = [
-        { name: 'lily', drink: 3 },
-        { name: 'petal', drink: 5 },
+        { name: 'lily', drinks: 3 },
+        { name: 'petal', drinks: 5 },
     ];
 
 }
@@ -24,6 +25,8 @@ export default state;
 
 // export dispatch functions that modify state
 
+
+
 export function setMessage(message) {
     state.message = message;
 }
@@ -32,15 +35,8 @@ export function addPlant(plant) {
     state.plants.push(plant);
 }
 
-export function updatePlant(plant) {
-    const index = state.plants.indexOf(plant);
-    if (index !== -1) {
-        state.plants[index] = plant;
-    }
-}
-
 export function updateHydrated() {
-
+    
 }
 
 export function spillCount() {
