@@ -1,13 +1,16 @@
+const plantInput = document.querySelector('.plant-name');
 
 
+export default function createAddPlant(form, actions) {
+    const newPlant = actions.handleAddPlant;
+    form.addEventListener('submit', (e) => {
+        
+        e.preventDefault();
+        
+        newPlant(plantInput.value);   
+        plantInput.value = '';  
 
-export default function createAddPlant(input, { handleAddPlant }) {
-    
-    input.addEventListener('keypress', (e) => {
-        console.log(e);
-
-        handleAddPlant(input.value);
-        input.value = '';
     });
-    return () => {};
+
+    return () => { };
 }
