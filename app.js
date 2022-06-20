@@ -31,17 +31,7 @@ const wateredMessage = [
 ];
 
 
-const Plants = createPlants(document.querySelector('#plant-list'), {
-    handleDrink: (plant) => {
-      
-    },
-    handleNone: (plant) => {
-        
-    },
-    handleSpill: (plant) => {
-        
-    }
-});
+const Plants = createPlants(document.querySelector('#plant-list'));
 
 const AddPlant = createAddPlant(document.querySelector('.new-plant'), {
     handleAddPlant: (name) => {
