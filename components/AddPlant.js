@@ -1,3 +1,4 @@
+
 const plantInput = document.querySelector('.plant-name');
 
 

@@ -1,6 +1,7 @@
+import state from '../state.js';
+
 
 export function PlantItem({ plant }) {
-    console.log(plant);
 
     const p = document.createElement('p');
     p.classList.add('plant-list');
@@ -20,7 +21,13 @@ export function PlantItem({ plant }) {
     plantDisplay.classList.value = 'plant-display';
     plantDisplay.textContent = plant.plantDisplay;
 
-    div.append(name, drinks, plantDisplay);
+    const plantImage = document.createElement('img');
+    plant.thirst = state.drinks.value;
+    plantImage.classList.add('thirsty');
+    plantImage.classList.add('drink');
+    plantImage.classList.add('watered');
+
+    div.append(name, drinks, plantDisplay, plantImage);
 
     p.append(div);
 
