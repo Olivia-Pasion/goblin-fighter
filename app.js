@@ -24,9 +24,9 @@ import createAddPlant from './components/AddPlant.js';
 
 const Plants = createPlants(document.querySelector('#plant-list'), {
     handleWaterPlant: (plant) => {
-        if (plant.drink <= 0) return;
+        if (plant.drinks <= 0) return;
         if (Math.random() < 0.33) {
-            plant.drink--;
+            plant.drinks--;
             setMessage('you added water to' + ' ' + plant.name);
         } else {
             setMessage('not enough water was given to' + ' ' + plant.name);
@@ -39,7 +39,7 @@ const Plants = createPlants(document.querySelector('#plant-list'), {
             setMessage('not enough water was given to' + ' ' + plant.name);
         }
 
-        if (plant.drink === 0) {
+        if (plant.drinks === 0) {
             state.hydrated.length++;
         }
         if (state.hydrated === 0) {
