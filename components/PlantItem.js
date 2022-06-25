@@ -1,32 +1,25 @@
 import state from '../state.js';
 
 
-export function PlantItem({ plant, handleWaterPlant, handleWatered }) {
-
-    if (plant.drinks === 0) {
-        const watered = document.createElement('button');
-        watered.classList.add('watered');
-        watered.textContent = 'Hydrated!';
-        watered.removeEventListener('click', () => {
-            handleWatered(plant);
-        });
-        div.append(watered);
-        
-        state.hydrated.length++;
-    }
-
-    const p = document.createElement('p');
-    p.classList.add('plant-list');
-
+export function PlantItem({ plant, handleWaterPlant }) {
     const div = document.createElement('div');
+    const p = document.createElement('p');
+    const button = document.createElement('button');
+
+   
+
+    p.classList.add('plant-list');
     div.classList.add('plant');
 
-    const button = document.createElement('button');
+    const plantImage = document.createElement('img');
+    plantImage.src = '../assets/PLANTS/thirsty.png';
 
     button.addEventListener ('click', () => {
         handleWaterPlant(plant);
         if (plant.drinks === 0) {
-            plantImage.src = '../assets/PLANTS/watered.png';} else {
+            plantImage.src = '../assets/PLANTS/watered.png';
+            button.disabled = plant.drinks === 0;
+        } else if (0 < plant.drinks < state.drinks) {
             plantImage.src = '../assets/PLANTS/drink.png';
         }
     });
@@ -40,16 +33,9 @@ export function PlantItem({ plant, handleWaterPlant, handleWatered }) {
     drinks.classList.value = 'plant-drinks';
     drinks.textContent = plant.drinks;
 
-    const plantDisplay = document.createElement('span');
-    plantDisplay.classList.value = 'plant-display';
-    plantDisplay.textContent = plant.plantDisplay;
 
-    const plantImage = document.createElement('img');
-    plantImage.src = '../assets/PLANTS/thirsty.png';
     
-    plantImage.classList.add('thirsty');
-    plantImage.classList.add('drink');
-    plantImage.classList.add('watered');
+    
 
     button.append(name, drinks, plantImage);
 

@@ -10,7 +10,7 @@ export function initialize() {
 
     state.message = '';
     state.spills = 10;
-    state.hydrated = [];
+    state.hydrated = 0;
     state.drinks = Math.ceil(Math.random() * 5);
     state.thirst = ['thirsty', 'drink', 'watered'];
     state.plants = [
@@ -34,10 +34,6 @@ export function setMessage(message) {
 
 export function addPlant(plant) {
     state.plants.push(plant);
-}
-
-export function updateHydrated() {
-   
 }
 
 export function spillCount() {
