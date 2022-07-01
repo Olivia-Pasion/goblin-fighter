@@ -4,9 +4,8 @@
 import state, { 
     addPlant,
     setMessage,
-    
-
- 
+    hydratedCount,
+    spillCount
 } from './state.js';
 
 
@@ -16,11 +15,12 @@ import state, {
 import createPlants from './components/Plants.js';
 import createAddPlant from './components/AddPlant.js';
 import createMessageDisplay from './components/MessageDisplay.js';
+import createHydrated from './components/Hydrated.js';
+import createSpillCount from './components/SpillCount.js';
 
 // Create each component: 
 // - pass in the root element via querySelector
 // - pass any needed handler functions as properties of an actions object 
-
 
 const AddPlant = createAddPlant(document.querySelector('.new-plant'), {
     handleAddPlant(name) {
@@ -33,44 +33,69 @@ const AddPlant = createAddPlant(document.querySelector('.new-plant'), {
     },
 });
 
+const Hydrated = createHydrated(document.querySelector('#hydrated'), { 
+    handleHydrated(hydrated) {
+        hydratedCount(hydrated);
+        return () => {
+            display();
+        };
+    }
+}
+);
+
+const SpillCount = createSpillCount(document.querySelector('#spill-count'), {
+    handleHydrated(spills) {
+        spillCount(spills);
+        return () => {
+            display();
+        };
+    }
+});
+
 const Plants = createPlants(document.querySelector('#plant-list'), {
     handleWaterPlant(plant) {
-        if (plant.drinks <= 0) {
-            state.hydrated++;
-            display();
-            return;
-        } 
+       
+        
         if (state.spills === 0) {
             setMessage('All of your water has spilled');
-            display();
-            return;
+            return () => {
+                display();
+            };
         }
 
-        if (Math.random() < 0.75) {
+        if (Math.random() < 0.33 && plant.drinks !== 0) {
             
-            setMessage('you added water to' + ' ' + plant.name);
             plant.drinks--;
+            setMessage('you added water to' + ' ' + plant.name); 
             
             display();
-        } else if (Math.random() < 0.5) {
-            state.spills--;
+
+        } 
+        
+        else if (Math.random() < 0.65 && state.spills !== 0) 
+        {
+            spillCount();
+            console.log(state.spills);
             setMessage('you spilled the water');
-            display();
+            return display();
         }
+
         else 
         {
-
             setMessage('not enough water was given to' + ' ' + plant.name);
             display();
         }
-        console.log(state.message);
 
-        
+        if (plant.drinks <= 0) 
+        {
+            hydratedCount(); 
+            
+            return display(); 
+        } 
     }
 });
 
 const MessageDisplay = createMessageDisplay(document.querySelector('.message-center'));
-const hydratedCount = document.querySelector('.hydrated-count');
 
 // Roll-up display function that renders (calls with state) each component
 function display() {
@@ -78,10 +103,9 @@ function display() {
     Plants({ plants: state.plants });
     AddPlant({});
     MessageDisplay({ message: state.message });
-    hydratedCount.textContent = state.hydrated;
+    Hydrated({ hydrated: state.hydrated });
+    SpillCount({ spills: state.spills });
     
-    
-
 }
 
 // Call display on page load

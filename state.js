@@ -8,11 +8,11 @@ export function initialize() {
     // state.game = null;
     // state.pastGames = [];
 
+    
     state.message = '';
     state.spills = 10;
     state.hydrated = 0;
     state.drinks = Math.ceil(Math.random() * 5);
-    state.thirst = ['thirsty', 'drink', 'watered'];
     state.plants = [
         { name: 'lily', drinks: 3 },
         { name: 'petal', drinks: 5 },
@@ -36,6 +36,10 @@ export function addPlant(plant) {
     state.plants.push(plant);
 }
 
-export function spillCount() {
-    
+export function hydratedCount() {
+    state.hydrated++;
 }
+
+export function spillCount() {
+    state.spills--;
+};

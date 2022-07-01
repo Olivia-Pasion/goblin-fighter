@@ -1,8 +1,8 @@
 
-
 export default function createSpillCount(root) {
+    const count = root.querySelector('span');
     
     return ({ spills }) => {
-        root.array = spills;
+        count.textContent = spills;
     };
 }
