@@ -42,4 +42,4 @@ export function hydratedCount() {
 
 export function spillCount() {
     state.spills--;
-};
+}

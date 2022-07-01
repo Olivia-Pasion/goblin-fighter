@@ -63,7 +63,7 @@ const Plants = createPlants(document.querySelector('#plant-list'), {
             };
         }
 
-        if (Math.random() < 0.33 && plant.drinks !== 0) {
+        if (Math.random() < 0.45 && plant.drinks !== 0) {
             
             plant.drinks--;
             setMessage('you added water to' + ' ' + plant.name); 
@@ -72,10 +72,9 @@ const Plants = createPlants(document.querySelector('#plant-list'), {
 
         } 
         
-        else if (Math.random() < 0.65 && state.spills !== 0) 
+        else if (Math.random() < 0.5 && state.spills !== 0) 
         {
             spillCount();
-            console.log(state.spills);
             setMessage('you spilled the water');
             return display();
         }
