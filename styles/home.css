@@ -1,1 +1,88 @@
 /* CSS for home page (index.html) */
+
+main {
+    padding: 30px 60px 30px 60px;
+    border: 20px;
+    background-color:rgb(147, 168, 106);
+
+    display: grid;
+    grid-template-rows: 350px 1fr;
+    grid-template-areas: 
+        'parent-section'
+        'plant-section'
+    ;
+}
+
+@media (min-width: 600px) {
+    main {
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+            'parent-section'  'plant-section'
+        ;
+        grid-gap: 0 40px;
+    }
+}
+
+#parent-section {
+    grid-area: 'parent-section';
+}
+
+#plant-section {
+    grid-area: 'plant-section';
+}
+
+.notification-container {
+    background-color: azure;
+    border: 1px solid gray;
+    border-radius: 5px;
+    
+    display: block;
+    padding: 10px 5px;
+    text-align: center;
+
+}
+
+.spill {
+
+    background-color: azure;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10rem;
+
+}
+
+form {
+    padding: 20px;
+    display: block;
+    text-align: center;
+}
+
+.plants {
+    
+    background: azure;
+    border: 1px solid gray;
+    border-radius: 10px;
+
+    display: block;
+    height: 500px;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.plant {
+    background-color: floralwhite;
+
+    padding: 50px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    margin: 20px;
+    
+    text-align: start;
+    font-size: 24px;
+}
+
+.plant-display {
+
+    
+}

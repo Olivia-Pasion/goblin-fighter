@@ -63,5 +63,8 @@
       }
     ],
     "array-bracket-spacing": "error"
-  }
+  },
+
+  
+
 }

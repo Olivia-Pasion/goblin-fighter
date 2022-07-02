@@ -13,16 +13,70 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/home.css" />
-    <title>Web MVC UI</title>
+    <title>Plant Parent Simulator</title>
 </head>
 
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web MVC UI</h1>
+        <h1>Plant Parent Simulator</h1>
     </header>
 
-    <main></main>
+    <main>
+
+        <section id="parent-section">
+            <div class="notification-container">
+
+                <p id ="hydrated" class="notification"> Plants hydrated:
+
+                    <span class="notification hydrated-count">
+                        0
+                    </span>
+
+                </p>
+                    Message: 
+                    <span class="notification message-center">...</span>
+
+            </div>
+            <div id="parent-container">
+
+                <p id="spill-count" class="spill">
+                    Spills Until Refill:
+                    <span>10</span>
+                </p>
+
+                    <img class="parent-image" src="./assets/parent.png"> 
+                
+                
+            </div>
+        </section>
+
+        <section id="plant-section">
+            <div>
+                <form class="new-plant">
+                    <input class="plant-name">
+                    <button type="submit">Add Plant</button>
+                </form>
+                <p id="plant-list">
+                    <!-- <div class="plant">
+                        <span class="plant-name">lily</span>
+                        <span class="plant-drinks">3</span>
+                        <span class="plant-display">
+                            <img src="/assets/PLANTS/thirsty.png">
+                        </span>
+                    </div>
+                    <div class="plant">
+                        <span class="plant-name">petal</span>
+                        <span class="plant-drinks">5</span>
+                        <span class="plant-display">
+                            <img src="/assets/PLANTS/thirsty.png">
+                        </span>
+                    </div> -->
+                </p>
+            </div>
+        </section>
+
+    </main>
 
     <footer>&copy;2022 Aspiring Software Developer</footer>
 
